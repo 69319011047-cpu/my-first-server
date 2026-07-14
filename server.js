@@ -15,8 +15,74 @@ const server = http.createServer((req, res) => {
 
   // ส่งหน้าเว็บกลับ
   res.end(`
-    <h1>สวัสดีครับ! นี่คือ Web Server ของ นางสาวสุชาดา วงค์ตรี 69319011047</h1>
-    <p>เครื่องแม่ข่ายทำงานปกติบนระบบ Railway แล้วครับผม!</p>
+    <html>
+    <head>
+      <title>Shinchan Web Server</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          background: #fff3b0;
+          text-align: center;
+          padding: 50px;
+        }
+
+        .box {
+          background: white;
+          border: 5px solid #e60012;
+          border-radius: 25px;
+          padding: 30px;
+          max-width: 600px;
+          margin: auto;
+          box-shadow: 0px 8px 15px gray;
+        }
+
+        h1 {
+          color: #e60012;
+          font-size: 35px;
+        }
+
+        p {
+          color: #333;
+          font-size: 20px;
+        }
+
+        .shinchan {
+          font-size: 60px;
+        }
+
+        .footer {
+          margin-top: 20px;
+          color: #0066cc;
+          font-weight: bold;
+        }
+      </style>
+    </head>
+
+    <body>
+
+      <div class="box">
+        <div class="shinchan">🧒🌟</div>
+
+        <h1>
+          สวัสดีครับ! Web Server ของ<br>
+          นางสาวสุชาดา วงค์ตรี 69319011047
+        </h1>
+
+        <p>
+          🎈 เครื่องแม่ข่ายทำงานปกติบนระบบ Railway แล้วครับผม!
+        </p>
+
+        <p>
+          💻 ระบบ Server พร้อมใช้งานแล้ว
+        </p>
+
+        <div class="footer">
+          ✨ Shinchan Style Web Server ✨
+        </div>
+      </div>
+
+    </body>
+    </html>
   `);
 
 });
