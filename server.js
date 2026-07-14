@@ -1,93 +1,136 @@
-// 1. เรียกใช้งาน Module http
 const http = require('http');
 
-// 2. กำหนด Port ที่ Cloud กำหนด ถ้าไม่มีให้ใช้ 3000
 const port = process.env.PORT || 3000;
 
-// 3. สร้าง Server
 const server = http.createServer((req, res) => {
 
-  // ส่งสถานะ OK
   res.statusCode = 200;
-
-  // กำหนดรูปแบบข้อมูล
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
 
-  // ส่งหน้าเว็บกลับ
   res.end(`
-    <html>
-    <head>
-      <title>Shinchan Web Server</title>
-      <style>
-        body {
-          font-family: Arial, sans-serif;
-          background: #fff3b0;
-          text-align: center;
-          padding: 50px;
-        }
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shinchan Web Server</title>
 
-        .box {
-          background: white;
-          border: 5px solid #e60012;
-          border-radius: 25px;
-          padding: 30px;
-          max-width: 600px;
-          margin: auto;
-          box-shadow: 0px 8px 15px gray;
-        }
+<style>
 
-        h1 {
-          color: #e60012;
-          font-size: 35px;
-        }
+body {
+    margin: 0;
+    font-family: "Comic Sans MS", Arial, sans-serif;
+    background: linear-gradient(#ffe66d, #fff8dc);
+    text-align: center;
+    padding: 40px;
+}
 
-        p {
-          color: #333;
-          font-size: 20px;
-        }
+.container {
+    background: white;
+    max-width: 650px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 35px;
+    border: 6px solid #ff4d4d;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
 
-        .shinchan {
-          font-size: 60px;
-        }
+.shinchan-img {
+    width: 180px;
+    animation: bounce 2s infinite;
+}
 
-        .footer {
-          margin-top: 20px;
-          color: #0066cc;
-          font-weight: bold;
-        }
-      </style>
-    </head>
+@keyframes bounce {
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
 
-    <body>
+h1 {
+    color: #e60012;
+    font-size: 32px;
+}
 
-      <div class="box">
-        <div class="shinchan">🧒🌟</div>
+.name {
+    color: #0066cc;
+    font-size: 25px;
+    font-weight: bold;
+}
 
-        <h1>
-          สวัสดีครับ! Web Server ของ<br>
-          นางสาวสุชาดา วงค์ตรี 69319011047
-        </h1>
+.message {
+    background: #fff0f5;
+    border-radius: 20px;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 20px;
+}
 
-        <p>
-          🎈 เครื่องแม่ข่ายทำงานปกติบนระบบ Railway แล้วครับผม!
-        </p>
+.star {
+    font-size: 30px;
+}
 
-        <p>
-          💻 ระบบ Server พร้อมใช้งานแล้ว
-        </p>
+.footer {
+    margin-top: 25px;
+    color: #ff6600;
+    font-size: 18px;
+    font-weight: bold;
+}
 
-        <div class="footer">
-          ✨ Shinchan Style Web Server ✨
-        </div>
-      </div>
+</style>
 
-    </body>
-    </html>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="star">
+⭐ 🌈 ⭐
+</div>
+
+<img class="shinchan-img" src="shinchan.png">
+
+<h1>
+🎉 Welcome to Web Server 🎉
+</h1>
+
+<div class="name">
+นางสาวสุชาดา วงค์ตรี<br>
+69319011047
+</div>
+
+<div class="message">
+
+🧒✨ สวัสดีครับ!<br><br>
+
+🎈 เครื่องแม่ข่ายทำงานปกติ<br>
+บนระบบ Railway แล้วครับผม!<br><br>
+
+💻 Server พร้อมใช้งานแล้ว
+
+</div>
+
+
+<div class="footer">
+
+❤️ Shinchan Cute Server Style ❤️
+
+</div>
+
+<div class="star">
+🌟 🧡 🌟
+</div>
+
+</div>
+
+</body>
+</html>
   `);
 
 });
 
-// 4. เปิด Server
+
 server.listen(port, () => {
-  console.log(`Server is running! เครื่องแม่ข่ายเปิดทำงานแล้วที่ช่องทาง: ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
